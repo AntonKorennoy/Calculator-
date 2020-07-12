@@ -100,8 +100,6 @@ namespace Calculator_
             if (!button2.Enabled)
                 return false;
 
-
-
             if (!button3.Enabled)
                 return false;
 
@@ -109,6 +107,9 @@ namespace Calculator_
                 return false;
 
             if (!button18.Enabled)
+                return false;
+
+            if (!button19.Enabled)
                 return false;
 
             return true;
@@ -128,6 +129,14 @@ namespace Calculator_
             if (textBox1.Text[0] == '-')
                 if (textBox1.Text[1] == '0' && (textBox1.Text.IndexOf(",") != 2))
                     textBox1.Text = textBox1.Text.Remove(1, 1);
+            if (textBox1.Text[0] == '0') {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button18.Enabled = false;
+                button19.Enabled = false;
+            }
         }
 
 
@@ -141,7 +150,9 @@ namespace Calculator_
             button3.Enabled = true;
             button4.Enabled = true;
             button18.Enabled = true;
-            
+            button19.Enabled = true;
+
+
         }
 
         private void button16_Click(object sender, EventArgs e)
